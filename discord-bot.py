@@ -3,6 +3,7 @@ import time
 from bs4 import BeautifulSoup
 import re
 import requests
+import config
 
 client = discord.Client()
 
@@ -29,4 +30,4 @@ async def on_message(message):
         pp_str = ", ".join(str(p) for p in potential_pokemon if p)
         await message.channel.send("Potential pokemon: " + pp_str)
 
-client.run('Nzc5NDg1OTI5MzQ0OTkxMjU0.X7hO1w.dFiQ_kqL4_qGqFp-kpo_AasdMBs')
+client.run(config.bot-token)
