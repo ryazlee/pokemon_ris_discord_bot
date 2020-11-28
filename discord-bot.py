@@ -1,8 +1,8 @@
 import discord
 import re
 import requests
-import config
 import string
+import os
 
 client = discord.Client()
 
@@ -45,4 +45,4 @@ async def on_message(message):
         pp_str = ", ".join(str(p) for p in potential_pokemon if p)
         await message.channel.send("Potential pokemon: " + pp_str)
 
-client.run(config.bot_token)
+client.run(os.environ.get('RB_PASSWORD'))
