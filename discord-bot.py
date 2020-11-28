@@ -44,5 +44,6 @@ async def on_message(message):
         potential_pokemon = search_pokemon_url(data[1]) if message.content.startswith('rbu') else search_pokemon_query(query_url_creator(data[1]))
         pp_str = ", ".join(str(p) for p in potential_pokemon if p)
         await message.channel.send("Potential pokemon: " + pp_str)
+        print("query success: ", data[1])
 
 client.run(os.environ.get('RB_PASSWORD'))
